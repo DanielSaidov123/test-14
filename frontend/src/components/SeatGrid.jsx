@@ -5,7 +5,7 @@ import MovieCard from './MovieCard';
 
 
 export default function SeatGrid() {
-  const {movis,loading,error ,getAllMovies} = useMovis()
+  const {filteredMovies,loading,error ,getAllMovies} = useMovis()
  useEffect(() => {
     getAllMovies()
   }, [getAllMovies]);
@@ -18,8 +18,8 @@ export default function SeatGrid() {
   }
   return (
     <div className='grid'>
-        {movis.map((mov,i)=>(
-            <MovieCard move={mov} d={i}/>
+        {filteredMovies.map((mov,i)=>(
+            <MovieCard move={mov} key={i}/>
         ))}
     </div>
   )

@@ -1,19 +1,24 @@
-import React from 'react'
-import { useMovis } from '../store/movis'
+import React from 'react';
+import { useMovis } from '../store/movis';
 
 export default function Navbar() {
+  const {   serchMove,  setSerchMove, filteredMovies } = useMovis();
 
-    const {movis,setSerchMove,serchMove } = useMovis()
-    
-     const filterMovies = movis.filter((movis)=>movis.Title.includes(serchMove))
   return (
     <nav className='navbarMain'>
-        <h1>Movie Night</h1>
-        <p>Search a movie and pick your seats</p>
-        <form >
-            <input type="text" onChange={(e)=>setSerchMove(e.target.value)} value={serchMove}/>
-        </form>
-        <div>Showing {filterMovies.length} results</div>
+      <h1>Movie Night</h1>
+      <p>Search a movie and pick your seats</p>
+
+      <form onSubmit={(e) => e.preventDefault()}>
+        <input
+          type="text"
+          placeholder="Search movies..."
+          value={serchMove}
+          onChange={(e) => setSerchMove(e.target.value)} 
+        />
+      </form>
+
+      <div>Showing {filteredMovies.length} results</div>
     </nav>
-  )
+  );
 }

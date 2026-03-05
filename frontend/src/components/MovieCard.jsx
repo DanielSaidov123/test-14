@@ -1,8 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import React from 'react'
-export default function MovieCard({move ,d}) {
-
+export default function MovieCard({move }) {
+const navigate = useNavigate();
   return (
-    <div className='grid-1' key={d}>
+    <div className='grid-1'>
       <div>
       <img src={move.Images[2]} alt="img" />
       </div>
@@ -24,7 +25,8 @@ export default function MovieCard({move ,d}) {
           <p>{move.Language}</p>
         </div>
       </div>
-      <button>Select Seats</button>
+      
+      <button onClick={()=> navigate(`/Details/${move.imdbID}`)}>Select Seats</button>
     </div>
   )
 }
