@@ -10,6 +10,8 @@ export default function Seats() {
 
   const seats = movie.seats;
   const [selected, setSelected] = useState( []);
+
+  
   const selectSeat = (id, taken) => {
     if (taken) return;
     setSelected(prev =>[...prev , id]);

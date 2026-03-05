@@ -17,11 +17,9 @@ export default function Details() {
     <div className="Seats">
       <h1>{movie.Title}</h1>
       <img src={movie.Images[2]} alt={movie.Title} />
-      <p>Year: {movie.Year}</p>
-      <p>Runtime: {movie.Runtime}</p>
-      <p>Genre: {movie.Genre}</p>
-      <p>Language: {movie.Language}</p>
-
+      <p>IMDb: {movie.imdbRating}</p>
+      <p>Votes: {movie.imdbVotes}</p>
+      <p>Metascore: {movie.Metascore}</p>
       <button 
         className="btn-go-to-seats" 
         onClick={goToSeats}
