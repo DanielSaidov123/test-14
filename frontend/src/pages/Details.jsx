@@ -20,6 +20,9 @@ export default function Details() {
       <p>IMDb: {movie.imdbRating}</p>
       <p>Votes: {movie.imdbVotes}</p>
       <p>Metascore: {movie.Metascore}</p>
+      <p>Actors: {movie.Plot}</p>
+      <p>Movie ID: {imdbID}</p>
+      <p>Year: { movie.Year}</p>
       <button 
         className="btn-go-to-seats" 
         onClick={goToSeats}
